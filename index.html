@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+    <div class="calc-wrapper">
+      <h1 class="py-4 font-rajdhani">Free Love Calculator</h1>
+      <p class="description">Enter your details and Find out your Love compatibility with your partner.</p>
+      <form id="form" class="w-75 mt-6">
+        <div class="d-flex f-justify-center w-100">
+          <div class="d-flex f-column">
+            <label class="field-label">Your name*</label>
+            <input id="userName" class="mt-2 px-4 py-3 input-field" placeholder="Enter your name"/>
+            <span id="userNameError" class="error-label">&nbsp;</span>
+          </div>
+          <div class="d-flex f-column w-100">
+            <label class="field-label">Your gender*</label>
+            <select id="userGender" class="dropdown-field mt-2 mx-2 px-2">
+              <option disabled selected hidden value="">Select Gender</option>
+              <option disabled>Select Your Gender</option>
+            </select>
+            <span id="userGenderError" class="error-label">&nbsp;</span>
+          </div>
+          <div class="d-flex f-column w-100">
+            <label class="field-label">Your DOB*</label>
+            <select id="userDobDay" class="dropdown-field mt-2 mx-2 px-2">
+              <option disabled selected hidden value="">Date</option>
+              <option disabled>Select Date</option>
+            </select>
+            <span id="userDobDayError" class="error-label">&nbsp;</span>
+          </div>
+          <div class="d-flex f-column f-justify-end w-100">
+            <select id="userDobMonth" class="dropdown-field mt-2 mx-2 px-2">
+              <option disabled selected hidden value="">Month</option>
+              <option disabled>Select Month</option>
+            </select>
+            <span id="userDobMonthError" class="error-label">&nbsp;</span>
+          </div>
+          <div class="d-flex f-column f-justify-end w-100">
+            <select id="userDobYear" class="dropdown-field mt-2 mx-2 px-2">
+              <option disabled selected hidden value="">Year</option>
+              <option disabled>Select Year</option>
+            </select>
+            <span id="userDobYearError" class="error-label">&nbsp;</span>
+          </div>
+        </div>
+        <div class="d-flex f-justify-center w-100 mt-2">
+          <div class="d-flex f-column">
+            <label class="field-label">Partner name*</label>
+            <input id="partnerName" class="mt-2 px-4 py-3 input-field" placeholder="Enter your name"/>
+            <span id="partnerNameError" class="error-label"></span>
+          </div>
+          <div class="d-flex f-column w-100">
+            <label class="field-label">Partner gender*</label>
+            <select id="partnerGender" class="dropdown-field mt-2 mx-2 px-2">
+              <option disabled selected hidden value="">Select Gender</option>
+              <option disabled>Select Partner Gender</option>
+            </select>
+            <span id="partnerGenderError" class="error-label">&nbsp;</span>
+          </div>
+          <div class="d-flex f-column w-100">
+            <label class="field-label">Partner DOB*</label>
+            <select id="partnerDobDay" class="dropdown-field mt-2 mx-2 px-2">
+              <option disabled selected hidden value="">Date</option>
+              <option disabled>Select Date</option>
+            </select>
+            <span id="partnerDobDayError" class="error-label">&nbsp;</span>
+          </div>
+          <div class="d-flex f-column f-justify-end w-100">
+            <select id="partnerDobMonth" class="dropdown-field mt-2 mx-2 px-2">
+              <option disabled selected hidden value="">Month</option>
+              <option disabled>Select Month</option>
+            </select>
+            <span id="partnerDobMonthError" class="error-label">&nbsp;</span>
+          </div>
+          <div class="d-flex f-column f-justify-end w-100">
+            <select id="partnerDobYear" class="dropdown-field mt-2 mx-2 px-2">
+              <option disabled selected hidden value="">Year</option>
+              <option disabled>Select Year</option>
+            </select>
+            <span id="partnerDobYearError" class="error-label">&nbsp;</span>
+          </div>
+        </div>
+        <div class="mt-4">
+          <div class="d-flex f-align-center">
+            <p class="label-scale w-40">How much do you love him or her on a scale from 1 to 100:*</p>
+            <input id="userLove" class="px-4 py-3 input-field" placeholder="Type here"/>
+            <span id="userLoveError" class="error-label">&nbsp;</span>
+          </div>
+          <div class="d-flex f-align-center mt-8">
+            <p class="label-scale w-40">How much do you think he or she loves you on a scale from 1 to 100:*</p>
+            <input id="partnerLove" class="px-4 py-3 input-field" placeholder="Type here"/>
+            <span id="partnerLoveError" class="error-label">&nbsp;</span>
+          </div>
+        </div>
+        <div class="d-flex f-justify-center mt-10">
+          <button id="submitBtn" class="primary-btn px-10 py-3">Get Calculate</button>
+        </div>
+      </form>
+    </div>
+    <div id="resultDialog" class="modal">
+      <div class="modal-content">
+        <span id="resultDialogCloseBtn" class="close">&times;</span>
+        <div class="d-flex f-column f-align-center">
+          <img class="mt-4 love-image" alt="Love Image" src="./assets/images/love-image.png">
+          <p class="mt-4 font-dm-sans result-description">The Result of Your Love is Lies in Numbers. The Percentage is:</p>
+          <div class="d-flex f-align-center mt-4 ">
+            <img class="heart-image" alt="Heart Image" src="./assets/images/heart.png">
+            <h2 id="resultLabel" class="ml-2 font-rajdhani"></h2>
+          </div>
+          <button id="checkAgain" class="mt-4 mb-4 px-10 py-3 primary-btn">Check Again</button>
+        </div>
+      </div>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
